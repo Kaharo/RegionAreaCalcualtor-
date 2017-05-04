@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Folder>
+ <name> KazEOSat-1 </name>
+ <Folder>
+  <name> nomer marshruta </name>
+  <Folder>
+	  <name>DS_DZHR1_201702040157003_KZ1_E145N44_012662</name>
+   <description>
+    </description>
+   <Placemark>
+    <name>DS_DZHR1_201702040157003_KZ1_E145N44_012662</name>
+    <ExtendedData>
+	    <SchemaData schemaUrl ="#QuicklookTypeId">
+      <SimpleData name ="ID"> ID </SimpleData>
+      <SimpleData name ="TypeInformation"> Information </SimpleData>
+      <SimpleData name ="LastUpdateDate"> Last_update_date </SimpleData>
+      <SimpleData name ="InternetAccessibility"> True </SimpleData>
+		 <SimpleData name ="Satellite"> KazEOSat-1 </SimpleData>
+		 <SimpleData name ="AcquisitionTime">2017-02-04T01:57:00.577Z</SimpleData>
+		 <SimpleData name ="SensorType"> NAOMI </SimpleData>
+		 <SimpleData name ="SensorResolution"> 1 m </SimpleData>
+		 <SimpleData name ="CloudCover"> 50 % </SimpleData>
+		 <SimpleData name ="ViewingAngle"> ViewingAngle </SimpleData>
+		 <SimpleData name ="SunElevation">2.8319231002231081e+01</SimpleData>
+		 <SimpleData name ="SunAzimuth">1.7019770846041865e+02</SimpleData>
+		</SchemaData>
+	   </ExtendedData>
+	   <Polygon>
+		<outerBoundaryIs>
+		 <LinearRing>
+       <coordinates>
+        145.01612005120248,44.52831019174591,0 145.33040252358413,44.47091286050969,0 144.64782721757365,42.549805869154575,0 144.33978094421806,42.609334419602085,0 145.01612005120248,44.52831019174591,0 
+      </coordinates>
+      </LinearRing>
+      </outerBoundaryIs>
+    </Polygon>
+   </Placemark>
+   <GroundOverlay>
+    <icon>
+     <href>DS_DZHR1_201702040157003_KZ1_E145N44_012662</href>
+    </icon>
+    <gx:LatLonQuad xmlns:gx = "http://www.google.com/kml/ext/2.2">
+     <coordinates>
+       144.33978094421806,42.609334419602085,0 144.64782721757365,42.549805869154575,0 145.33040252358413,44.47091286050969,0 145.01612005120248,44.52831019174591,0 
+     </coordinates>
+    </gx:LatLonQuad>
+   </GroundOverlay>
+  </Folder>
+ </Folder>
+</Folder>
+</kml>

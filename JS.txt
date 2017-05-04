@@ -1,0 +1,59 @@
+(function () {
+        var coords = "49.275450610656364 12.635742500424385 47.19767549203772 12.328125312924385 46.3853383306318 7.757812812924385 49.24677133696936 7.757812812924385 50.128091152170704 9.691406562924385 49.275450610656364 12.635742500424385 "+
+                	   "49.275450610656364 12.635742500424385";
+
+        var style = new ol.style.Style({
+            image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+                anchor: [0.5, 46],
+                anchorXUnits: 'fraction',
+                anchorYUnits: 'pixels',
+                opacity: 0.75,
+                src: 'http://ol3js.org/en/master/examples/data/icon.png'
+            }))
+        });
+
+        var vectorSource = new ol.source.Vector({
+            //create empty vector
+        });
+
+        var res = [];
+        var points = [];
+        //split the string every space and push it to a new array
+        res.push(coords.split(" "));
+        //iterate the new array and push a coordinate pair into a new array
+    console.log(res);
+        for (var i = 0; i < res[0].length; i += 2) {
+            //points.push(new ol.geom.Point([res[0][i], res[0][i += 1]]));
+            points.push(ol.proj.transform([parseFloat(res[0][i+1]), parseFloat(res[0][i])], 'EPSG:4326', 'EPSG:3857'));
+        }
+        //build a linearRing from the new array
+        var linearRing = new ol.geom.LinearRing(points);
+        //add linearRing as vector to the map
+        /*
+        var feature = new ol.Feature({
+            geometry: new ol.geom.Point(ol.proj.transform([9.753913025766153, 55.9879654682174], 'EPSG:4326', 'EPSG:3857'))
+        }); */
+        var feature = new ol.Feature({
+            geometry: new ol.geom.Polygon([points])
+        });
+
+        //add the feature vector to the layer vector, and apply a style to whole layer
+        vectorSource.addFeature(feature);
+
+
+        var vectorLayer = new ol.layer.Vector({
+            source: vectorSource,
+            //style: style
+        });
+
+        var map = new ol.Map({
+            layers: [new ol.layer.Tile({source: new ol.source.OSM()})],
+            target: document.getElementById('map'),
+            view: new ol.View({
+                center: [1085800.6312701665, 7556020.294111529],
+                zoom: 3
+            })
+        });
+        map.addLayer(vectorLayer);
+        map.getView().fitGeometry(feature.getGeometry(), map.getSize());
+    })();
